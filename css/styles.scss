@@ -1,0 +1,141 @@
+@import "font-awesome.css";
+
+@keyframes flashColor {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+$beautifulHue: linear-gradient(to right bottom, #edacbe, #ebeeac);
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "COPPERPLATE GOTHIC LIGHT";
+  background: $beautifulHue;
+}
+@keyframes moveThemeChanger {
+  0% {
+    background-color: white;
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(-50%) translateX(280%);
+    background-color: black;
+  }
+}
+.switch {
+  position: absolute;
+  width: 50px;
+  height: 20px;
+  left: 0;
+  background: white;
+  border: 2px solid rgb(170, 166, 166);
+  border-radius: 10rem;
+  padding: 3px;
+  cursor: pointer;
+
+  .route {
+    margin: 0 auto;
+    width: 80%;
+    height: 100%;
+    border-radius: 10rem;
+    background-color: #ebbebb70;
+  }
+  .changer {
+    width: 10px;
+    height: 10px;
+    background: white;
+    border: 1px solid black;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+  }
+  .changer.dark{
+    animation: moveThemeChanger 0.8s forwards ease-in-out;
+  }
+  .changer.normal{
+    animation: moveThemeChanger 0.8s forwards ease-in-out reverse;
+  }
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .clock {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 2px solid black;
+    position: relative;
+    overflow: hidden;
+    button {
+      cursor: pointer;
+      left: 50%;
+      top: 80%;
+      width: 100%;
+      padding: 10px;
+      transform: translateX(-50%) translateY(-100%);
+      border: none;
+      background: white;
+      outline: none;
+      position: absolute;
+    }
+    button:hover {
+      color: white;
+      background-color: #00000050;
+    }
+    .display {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      background-color: #ffffff80;
+      padding: 20px;
+
+      .time {
+        display: flex;
+        margin: 0 auto;
+
+        .mins,
+        .seconds,
+        .hours {
+          input {
+            width: 80%;
+            height: 100%;
+            background: transparent;
+            outline: none;
+            border: none;
+            font-size: 40px;
+          }
+        }
+        .mins,
+        .hours {
+          width: 40%;
+          font-size: 14px;
+        }
+
+        .seconds {
+          text-align: center;
+          font-size: 14px;
+          width: 20%;
+          input {
+            font-size: 25px;
+          }
+        }
+      }
+    }
+  }
+}

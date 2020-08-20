@@ -1,0 +1,191 @@
+@import url(c:\Users\JerryScript\Desktop\BOOM\stopclock\css\font-awesome.css);
+@-webkit-keyframes flashColor {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes flashColor {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "COPPERPLATE GOTHIC LIGHT";
+  background: -webkit-gradient(linear, left top, right bottom, from(#edacbe), to(#ebeeac));
+  background: linear-gradient(to right bottom, #edacbe, #ebeeac);
+}
+
+@-webkit-keyframes moveThemeChanger {
+  0% {
+    background-color: white;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+  100% {
+    -webkit-transform: translateY(-50%) translateX(280%);
+            transform: translateY(-50%) translateX(280%);
+    background-color: black;
+  }
+}
+
+@keyframes moveThemeChanger {
+  0% {
+    background-color: white;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+  100% {
+    -webkit-transform: translateY(-50%) translateX(280%);
+            transform: translateY(-50%) translateX(280%);
+    background-color: black;
+  }
+}
+
+.switch {
+  position: absolute;
+  width: 50px;
+  height: 20px;
+  left: 0;
+  background: white;
+  border: 2px solid #aaa6a6;
+  border-radius: 10rem;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.switch .route {
+  margin: 0 auto;
+  width: 80%;
+  height: 100%;
+  border-radius: 10rem;
+  background-color: #ebbebb70;
+}
+
+.switch .changer {
+  width: 10px;
+  height: 10px;
+  background: white;
+  border: 1px solid black;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-radius: 50%;
+}
+
+.switch .changer.dark {
+  -webkit-animation: moveThemeChanger 0.8s forwards ease-in-out;
+          animation: moveThemeChanger 0.8s forwards ease-in-out;
+}
+
+.switch .changer.normal {
+  animation: moveThemeChanger 0.8s forwards ease-in-out reverse;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .clock {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 2px solid black;
+  position: relative;
+  overflow: hidden;
+}
+
+.container .clock button {
+  cursor: pointer;
+  left: 50%;
+  top: 80%;
+  width: 100%;
+  padding: 10px;
+  -webkit-transform: translateX(-50%) translateY(-100%);
+          transform: translateX(-50%) translateY(-100%);
+  border: none;
+  background: white;
+  outline: none;
+  position: absolute;
+}
+
+.container .clock button:hover {
+  color: white;
+  background-color: #00000050;
+}
+
+.container .clock .display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  background-color: #ffffff80;
+  padding: 20px;
+}
+
+.container .clock .display .time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+}
+
+.container .clock .display .time .mins input,
+.container .clock .display .time .seconds input,
+.container .clock .display .time .hours input {
+  width: 80%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  border: none;
+  font-size: 40px;
+}
+
+.container .clock .display .time .mins,
+.container .clock .display .time .hours {
+  width: 40%;
+  font-size: 14px;
+}
+
+.container .clock .display .time .seconds {
+  text-align: center;
+  font-size: 14px;
+  width: 20%;
+}
+
+.container .clock .display .time .seconds input {
+  font-size: 25px;
+}
+/*# sourceMappingURL=styles.css.map */
